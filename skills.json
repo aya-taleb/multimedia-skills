@@ -1,0 +1,184 @@
+{
+  "repo": "multimedia-skills",
+  "skills": [
+    {
+      "name": "generate-images",
+      "status": "reworked",
+      "home": "multimedia-skills",
+      "synced_to": [
+        "instagram-boost-skills"
+      ],
+      "version": "0.1.0",
+      "source": {
+        "repo": "replicate/skills",
+        "commit": "2f36e415965ae63baa1c9f6635888092bcd771d3",
+        "paths": [
+          "skills/prompt-images",
+          "skills/run-models"
+        ],
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "name": "find-model",
+      "status": "reworked",
+      "version": "0.1.0",
+      "source": {
+        "repo": "replicate/skills",
+        "commit": "2f36e415965ae63baa1c9f6635888092bcd771d3",
+        "paths": [
+          "skills/find-models",
+          "skills/compare-models"
+        ],
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "name": "generate-video",
+      "status": "reworked",
+      "version": "0.1.0",
+      "source": {
+        "repo": "replicate/skills",
+        "commit": "2f36e415965ae63baa1c9f6635888092bcd771d3",
+        "paths": [
+          "skills/prompt-videos",
+          "skills/run-models"
+        ],
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "name": "transcribe",
+      "status": "ours",
+      "home": "multimedia-skills",
+      "synced_to": [
+        "linkedin-boost-skills",
+        "instagram-boost-skills"
+      ],
+      "version": "0.1.0",
+      "credit": "idea from Jake Schincariol's Influencer-Clone (no license, nothing copied); uses faster-whisper (MIT) if installed"
+    },
+    {
+      "name": "talking-head-cards",
+      "status": "ours",
+      "home": "multimedia-skills",
+      "synced_to": [
+        "linkedin-boost-skills",
+        "instagram-boost-skills"
+      ],
+      "version": "0.1.0",
+      "credit": "approach from vtake-skills by leeoxiang (MIT); our own code"
+    },
+    {
+      "name": "launch-video",
+      "status": "ours",
+      "home": "multimedia-skills",
+      "synced_to": [
+        "mimic-skills",
+        "biz-launch-skills"
+      ],
+      "version": "0.1.0",
+      "credit": "builds with HeyGen HyperFrames (Apache 2.0) if installed; idea from Jake Schincariol's video-production-skills (no license, nothing copied)"
+    },
+    {
+      "name": "youtube-shorts",
+      "status": "rewritten",
+      "replaces": "yt-shorts",
+      "version": "0.1.0"
+    },
+    {
+      "name": "youtube-seo",
+      "status": "rewritten",
+      "replaces": "yt-seo",
+      "version": "0.1.0"
+    },
+    {
+      "name": "youtube-plan",
+      "status": "rewritten",
+      "replaces": "yt-plan",
+      "version": "0.1.0"
+    },
+    {
+      "name": "youtube-comment",
+      "status": "rewritten",
+      "replaces": "yt-comment",
+      "version": "0.1.0"
+    },
+    {
+      "name": "youtube-audit",
+      "status": "rewritten",
+      "replaces": "yt-audit",
+      "version": "0.1.0"
+    },
+    {
+      "name": "humanize",
+      "status": "synced",
+      "home": "entrepreneur-skills",
+      "version": "0.1.0"
+    },
+    {
+      "name": "edit",
+      "status": "linked",
+      "repo": "Jakeschincariol/master-skills",
+      "commit": "b5b43e44f0a976ad25bda5095a94c161aab2f086",
+      "path": "skills/edit",
+      "license": "MIT"
+    },
+    {
+      "name": "virality",
+      "status": "linked",
+      "repo": "Jakeschincariol/master-skills",
+      "commit": "b5b43e44f0a976ad25bda5095a94c161aab2f086",
+      "path": "skills/virality",
+      "license": "MIT"
+    },
+    {
+      "name": "yt-script",
+      "status": "linked",
+      "repo": "Jakeschincariol/chatgpt-youtube-agent-skill",
+      "commit": "6314d3c17dfa1e596096654204e8a09e28cdfd74",
+      "path": "skills/yt-script",
+      "license": "MIT"
+    },
+    {
+      "name": "yt-package",
+      "status": "linked",
+      "repo": "Jakeschincariol/chatgpt-youtube-agent-skill",
+      "commit": "6314d3c17dfa1e596096654204e8a09e28cdfd74",
+      "path": "skills/yt-package",
+      "license": "MIT"
+    },
+    {
+      "name": "yt-retention",
+      "status": "linked",
+      "repo": "Jakeschincariol/chatgpt-youtube-agent-skill",
+      "commit": "6314d3c17dfa1e596096654204e8a09e28cdfd74",
+      "path": "skills/yt-retention",
+      "license": "MIT"
+    },
+    {
+      "name": "yt-edit",
+      "status": "linked",
+      "repo": "Jakeschincariol/chatgpt-youtube-agent-skill",
+      "commit": "6314d3c17dfa1e596096654204e8a09e28cdfd74",
+      "path": "skills/yt-edit",
+      "license": "MIT"
+    },
+    {
+      "name": "yt-chapters",
+      "status": "linked",
+      "repo": "Jakeschincariol/chatgpt-youtube-agent-skill",
+      "commit": "6314d3c17dfa1e596096654204e8a09e28cdfd74",
+      "path": "skills/yt-chapters",
+      "license": "MIT"
+    },
+    {
+      "name": "yt-viral",
+      "status": "linked",
+      "repo": "Jakeschincariol/chatgpt-youtube-agent-skill",
+      "commit": "6314d3c17dfa1e596096654204e8a09e28cdfd74",
+      "path": "skills/yt-viral",
+      "license": "MIT"
+    }
+  ]
+}

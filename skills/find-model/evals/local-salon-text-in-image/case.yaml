@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: local-salon-text-in-image
+expected_outcome: |
+  The assistant searches live, checks a few image models, prices one image on each from the model pages, explains that text rendering cannot be confirmed from the schema and points to the page examples or a small priced test, and names a pick with the per-image price and its source. No paid runs.

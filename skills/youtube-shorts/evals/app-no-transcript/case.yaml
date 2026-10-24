@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: app-no-transcript
+expected_outcome: |
+  The assistant does not download the video. It asks for the user's own file (or YouTube Studio download) and runs or points to the transcribe skill, explaining the steps.
+context:
+  scaffold_script: place-files.sh

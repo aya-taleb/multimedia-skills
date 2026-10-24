@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: app-title-description
+expected_outcome: |
+  Three title options under 100 characters, specific and honest; a description with the promise in the first two lines, only real links (tallyapp.io), chapters that start at 00:00 with 3+ ascending timestamps each 10s+ taken from the transcript, a few tags with a note that tags matter little; written to media/youtube/<slug>-seo.md. No invented search volumes.
+context:
+  scaffold_script: place-files.sh

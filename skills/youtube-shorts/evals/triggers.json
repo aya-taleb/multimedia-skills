@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "find the best shorts in my podcast transcript",
+    "turn my 40 minute webinar into youtube shorts",
+    "which moments in this video would make good reels?",
+    "repurpose my long youtube video into short clips",
+    "give me cut times for 5 clips from this transcript",
+    "what parts of my interview should I cut for tiktok"
+  ],
+  "should_not_trigger": [
+    "write a script for a 30 second short about pricing",
+    "add captions to my short",
+    "transcribe my webinar recording",
+    "plan my youtube calendar",
+    "write titles for my long youtube video",
+    "generate an AI video clip for a short"
+  ]
+}

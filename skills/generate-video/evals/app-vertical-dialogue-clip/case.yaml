@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: app-vertical-dialogue-clip
+expected_outcome: |
+  The assistant reads founder/context.md, searches live for a video model with audio and 9:16, checks the schema, prices 8 seconds with audio and one cheaper option, writes a scene prompt with camera, light, ambient sound, the line of dialogue after a colon and '(no subtitles)', checks the word count fits 8 seconds, does a dry run, shows the cost and asks for a yes. No paid run.
+context:
+  scaffold_script: place-files.sh

@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "make me a 5 second AI clip of waves crashing on rocks at sunset",
+    "animate this product photo into a short video with a slow zoom",
+    "can you generate a vertical video where a chef says 'lunch is ready'?",
+    "how should I prompt veo so it doesn't add subtitles?",
+    "run seedance on replicate for a b-roll shot of a busy coffee shop",
+    "I want an AI video with sound effects and music for my reel intro"
+  ],
+  "should_not_trigger": [
+    "make an AI image of a coffee cup",
+    "cut the silences out of my recorded video",
+    "transcribe the audio from my podcast mp4",
+    "write a script for my youtube video",
+    "which video model on replicate is cheapest? don't run anything",
+    "make a 45 second launch promo video for my app from my website"
+  ]
+}

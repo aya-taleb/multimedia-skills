@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "audit my youtube channel, here's my studio export",
+    "why are my youtube videos not getting views?",
+    "my click through rate on youtube is like 2%, is that bad and what do I fix",
+    "which of my youtube videos worked best and why, csv attached",
+    "review my youtube analytics and tell me what to change",
+    "my channel has 40 videos and it's flat, what's wrong"
+  ],
+  "should_not_trigger": [
+    "write a title and description for my next youtube video",
+    "plan my next month of youtube videos",
+    "reply to these youtube comments for me",
+    "audit my website's SEO",
+    "review my instagram account performance",
+    "cut my podcast into youtube shorts"
+  ]
+}

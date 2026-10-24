@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "make me an AI image of a coffee cup on a marble table for my cafe's menu",
+    "can you generate 3 hero image options for my landing page with flux?",
+    "swap the background of this product photo to a beach, keep the bottle the same",
+    "how do I set up my replicate token so you can make images for me",
+    "write me a good prompt for nano banana to make a flat lay of my skincare products",
+    "I need a thumbnail background image, something moody and dark blue, generate it"
+  ],
+  "should_not_trigger": [
+    "make a 10 second AI video of waves hitting rocks",
+    "resize these 20 jpgs to 1080x1080 for instagram",
+    "which replicate video model is cheapest right now?",
+    "write the caption for my instagram post about our new menu",
+    "transcribe this podcast episode I exported",
+    "design a logo for me in figma"
+  ]
+}

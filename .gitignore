@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.DS_Store
+# outputs when you run the skills from the repo root (eval inputs under skills/*/evals/ stay tracked)
+/media/

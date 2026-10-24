@@ -1,0 +1,22 @@
+{
+  "name": "multimedia-skills",
+  "description": "Make the images and videos for your business: AI images and clips with a spend cap, transcripts, launch promos, talking-head cards and YouTube.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Aya Taleb",
+    "url": "https://github.com/aya-taleb"
+  },
+  "homepage": "https://github.com/aya-taleb/multimedia-skills",
+  "repository": "https://github.com/aya-taleb/multimedia-skills",
+  "license": "MIT",
+  "keywords": [
+    "claude-skills",
+    "founder",
+    "video",
+    "images",
+    "youtube",
+    "replicate",
+    "transcription"
+  ],
+  "skills": "./skills/"
+}

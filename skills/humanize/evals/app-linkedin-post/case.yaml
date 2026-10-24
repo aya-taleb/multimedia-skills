@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: app-linkedin-post
+expected_outcome: |
+  A cleaned LinkedIn post with no long dashes, no house banned words and none of the words to avoid from founder/context.md. Every fact in the draft is kept (the 212 teams, the 3.5 hours, the March beta, the link) and nothing new is added. The answer shows a before and after score, explains in plain words what lost points, and leaves posting to the user.
+context:
+  scaffold_script: place-files.sh

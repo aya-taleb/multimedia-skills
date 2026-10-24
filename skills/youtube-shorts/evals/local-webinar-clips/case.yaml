@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: local-webinar-clips
+expected_outcome: |
+  3 to 8 ranked clips that stand alone (price for the last customer; minimum matters more than price; discounts teach customers to ask; raise prices early with notice; sad sandwiches lead source), each with start/end on sentence edges from the transcript, exact opening line, on-screen text, title and reframe note, skipping housekeeping and screen-share chatter. Written to media/shorts/pricing-webinar-shorts.md. No view predictions.
+context:
+  scaffold_script: place-files.sh

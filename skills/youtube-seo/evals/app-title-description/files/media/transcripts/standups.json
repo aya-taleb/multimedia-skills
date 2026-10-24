@@ -1,0 +1,89 @@
+{
+ "meta": {
+  "source_name": "standups.mp4",
+  "duration": 113.5,
+  "language": "en"
+ },
+ "segments": [
+  {
+   "start": 0,
+   "end": 6.2,
+   "text": "If your agency standup takes forty five minutes, this video is for you."
+  },
+  {
+   "start": 6.5,
+   "end": 12.7,
+   "text": "I'm Dana, I run Tally, and we're a small team too, so I've sat through a lot of these."
+  },
+  {
+   "start": 13,
+   "end": 20.2,
+   "text": "Here's what a long standup usually looks like. Everyone reads out what they did yesterday."
+  },
+  {
+   "start": 20.5,
+   "end": 24.7,
+   "text": "Nobody's listening, because they're waiting for their turn."
+  },
+  {
+   "start": 25,
+   "end": 33.7,
+   "text": "And the one person who's actually stuck says nothing, because saying you're stuck in front of eight people feels bad."
+  },
+  {
+   "start": 34,
+   "end": 42.7,
+   "text": "So here's the change we made. We flipped the order. The first question is: where are you stuck?"
+  },
+  {
+   "start": 43,
+   "end": 47.2,
+   "text": "Not what did you do. Where are you stuck."
+  },
+  {
+   "start": 47.5,
+   "end": 54.7,
+   "text": "If nobody's stuck, the standup is over in two minutes. That's a win, not a failure."
+  },
+  {
+   "start": 55,
+   "end": 61.7,
+   "text": "If someone is stuck, the right person stays on and everyone else leaves."
+  },
+  {
+   "start": 62,
+   "end": 70.2,
+   "text": "The second change: we put the stuck items somewhere everyone can see them before the meeting."
+  },
+  {
+   "start": 70.5,
+   "end": 78.7,
+   "text": "In our case that's a board in Tally, but a shared doc works too. The point is people read it first."
+  },
+  {
+   "start": 79,
+   "end": 86.7,
+   "text": "Third, we set a hard ten minute cap. When the timer goes, we stop, even mid sentence."
+  },
+  {
+   "start": 87,
+   "end": 95.2,
+   "text": "That sounds rude. In practice people get to the point faster, because they know the cap is real."
+  },
+  {
+   "start": 95.5,
+   "end": 103.7,
+   "text": "So, recap. Ask where are you stuck first. Write blockers where everyone can see them. Cap it at ten minutes."
+  },
+  {
+   "start": 104,
+   "end": 109.2,
+   "text": "Try it for one week and tell me in the comments what changed."
+  },
+  {
+   "start": 109.5,
+   "end": 113.5,
+   "text": "And if you want the board we use, there's a link to Tally below. Thanks for watching."
+  }
+ ]
+}

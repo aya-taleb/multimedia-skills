@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "help me reply to my youtube comments",
+    "draft responses to these comments on my video",
+    "how should I respond to this negative comment on my youtube",
+    "find the leads in my youtube comments",
+    "reply to these in my voice: [comments]",
+    "which of my youtube comments are spam?"
+  ],
+  "should_not_trigger": [
+    "write a linkedin comment on this post",
+    "respond to this customer email",
+    "write my youtube video description",
+    "reply to this instagram DM",
+    "moderate my discord server",
+    "summarize the reviews of my app on the app store"
+  ]
+}

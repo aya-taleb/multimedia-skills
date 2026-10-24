@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: local-no-transcript
+expected_outcome: |
+  No transcript or details. The assistant asks for a transcript or a few lines on what the video covers (or drafts with clear placeholders), says it cannot promise ranking #1, gives honest steps to check demand (search suggestions, Studio Research tab), and does not invent chapters with fake times.

@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: app-channel-export
+expected_outcome: |
+  The assistant runs the stats tool on the export, finds that click rate is the main weak step for product-update style videos while the 'how we run standups' style videos are the stand-outs (6%+ CTR, ~47% viewed), ranks 3 fixes with the numbers behind each, ties them to the goal of paying teams, notes the sample is small, and writes media/youtube/audit-<date>.md. No invented benchmarks.
+context:
+  scaffold_script: place-files.sh

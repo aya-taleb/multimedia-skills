@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "transcribe my zoom recording, it's in my downloads folder",
+    "can you make subtitles for this mp4 I exported from premiere",
+    "I need a transcript with timestamps of my podcast so I can find quotes",
+    "turn this voice memo into text please",
+    "make an srt file from my interview video",
+    "what did I say around minute 12 in my webinar recording? the file is webinar.mov"
+  ],
+  "should_not_trigger": [
+    "summarize this pdf for me",
+    "write a script for my next youtube video",
+    "translate this paragraph into arabic",
+    "add animated caption cards over my talking head video",
+    "cut the dead air out of my video",
+    "make a voiceover for my promo with AI"
+  ]
+}

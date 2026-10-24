@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "add text pop-ups to my talking head video when I say the key points",
+    "can you put the main stats on screen as I mention them in this clip?",
+    "make my podcast clip more visual with cards, I have the transcript",
+    "lower thirds for my interview video synced to what's said",
+    "my video is just me talking, can you add some graphics so people don't scroll away",
+    "overlay the 3 tips as a list card when I list them in the video"
+  ],
+  "should_not_trigger": [
+    "add word-by-word captions to my reel",
+    "transcribe this voice memo",
+    "make me a 30 second promo video for my app launch",
+    "generate an AI image for my thumbnail",
+    "write the script for my next talking head video",
+    "cut out the ums and long pauses from my recording"
+  ]
+}

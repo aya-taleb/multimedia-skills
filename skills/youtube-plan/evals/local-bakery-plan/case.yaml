@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: local-bakery-plan
+expected_outcome: |
+  With 2 hours a week on a phone, a slow realistic pace (a short long video every 2 to 3 weeks plus Shorts), ideas tied to the class goal and home bakers, honest about time guesses, written to media/youtube/plan-*.md, no promised growth.
+context:
+  scaffold_script: place-files.sh

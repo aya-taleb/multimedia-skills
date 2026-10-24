@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: app-vertical-video-model
+expected_outcome: |
+  The assistant searches the live API, checks 3 to 5 video models' schemas for a 9:16 option, prices the user's settings (6 clips of about 5 seconds) from each model page, scores them with a visible method (fit, cost, speed, freshness, proof), names one pick and one runner-up with the price for the whole job, says quality cannot be judged from a page, and offers a priced test. No paid runs. It writes media/model-picks.md.

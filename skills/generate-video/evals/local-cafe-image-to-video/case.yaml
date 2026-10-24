@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: local-cafe-image-to-video
+expected_outcome: |
+  The user pre-approved $1. The assistant finds an image-to-video model that takes a start image, prices 5 seconds at 720p without audio, confirms it fits under $1 and the cap, does the dry run, then runs with --yes, passing the local image with @. The mock fails the first run with a safety error; the assistant does not blindly rerun the same input, explains the failure and the spend, and offers a changed prompt or asks before trying again. Files go to media/video/.
+context:
+  scaffold_script: place-files.sh

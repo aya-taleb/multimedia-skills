@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: app-feature-questions
+expected_outcome: |
+  Replies that do not invent a Slack integration or a price (placeholders like {{price}} and a note to the founder), a specific thank-you, a calm answer to the Trello comparison, video idea notes, and a file written.
+context:
+  scaffold_script: place-files.sh

@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "write a youtube title and description for this video",
+    "what tags should I use for my youtube video about sourdough",
+    "add chapters to my youtube description from this transcript",
+    "my video isn't showing up in youtube search, can you fix the metadata",
+    "optimize my youtube video for search before I publish",
+    "give me 3 title options for my youtube tutorial"
+  ],
+  "should_not_trigger": [
+    "do SEO for my website's homepage",
+    "why is my youtube channel not growing? here's my analytics",
+    "write the script for my youtube video",
+    "make a thumbnail image for my video",
+    "plan 6 weeks of youtube videos",
+    "write an instagram caption"
+  ]
+}

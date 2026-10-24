@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "plan my youtube channel for the next 2 months",
+    "what videos should I make for my startup's youtube?",
+    "how often should I post on youtube if I only have 3 hours a week",
+    "make me a youtube content calendar",
+    "give me video ideas for my bakery channel",
+    "I want to start a youtube channel for my saas, where do I start"
+  ],
+  "should_not_trigger": [
+    "plan my instagram posts for next week",
+    "write the script for my first youtube video",
+    "why is my youtube channel not growing, here's the data",
+    "write a title for this video",
+    "plan our product launch",
+    "make a weekly review of my businesses"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "multimedia-skills",
+  "owner": {
+    "name": "Aya Taleb",
+    "url": "https://github.com/aya-taleb"
+  },
+  "plugins": [
+    {
+      "name": "multimedia-skills",
+      "source": "./",
+      "description": "Make the images and videos for your business: AI images and clips with a spend cap, transcripts, launch promos, talking-head cards and YouTube."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: local-lunch-cold-email
+expected_outcome: |
+  A shorter, plain cold email that keeps the offer facts (the $9 lunch, the Tuesday and Thursday drop at 11:45, the 20-person minimum), keeps the sender's physical address and the opt-out line, drops the stock opener and sign-off, has no long dashes and uses none of the business file's words to avoid. No new claims. The answer shows a score and leaves sending to the user.
+context:
+  scaffold_script: place-files.sh

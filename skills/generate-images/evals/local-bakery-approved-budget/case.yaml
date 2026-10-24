@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: local-bakery-approved-budget
+expected_outcome: |
+  The user pre-approved up to $0.50. The assistant finds a current model, prices the run, confirms the estimate fits under $0.50 and the session cap, then runs it with the tool. The first create is rate limited (429) by the mock; the tool waits and the run goes through without firing extra runs. Both images are saved under media/images/ with a sidecar, and the answer gives the file paths and the spend. Nothing invented about the bakery.
+context:
+  scaffold_script: place-files.sh

@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: local-salon-podcast-clip
+expected_outcome: |
+  There is no transcript. The assistant does not invent one. It says the transcript comes first and runs or offers the transcribe skill (or its tool) on the file; since faster-whisper is not installed here, it explains the install and stops before planning cards, or plans nothing it cannot back up. No made-up card text.
+context:
+  scaffold_script: place-files.sh

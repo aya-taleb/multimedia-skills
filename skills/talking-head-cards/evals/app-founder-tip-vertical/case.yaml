@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: app-founder-tip-vertical
+expected_outcome: |
+  The assistant reads the business file for colors, probes the video, plans 3 to 6 cards tied to transcript lines (every number spoken, nothing invented), writes media/cards/tip-cards.json, runs the check, makes preview stills, renders media/cards/tip-cards.mp4 without touching the original, and shows a plan table. It names a next step and leaves posting to the user.
+context:
+  scaffold_script: place-files.sh

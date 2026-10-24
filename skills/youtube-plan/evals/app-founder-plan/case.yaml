@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: app-founder-plan
+expected_outcome: |
+  A plan with the pace math from 4 hours a week (likely one video every 1 to 2 weeks), a 6 week calendar with working titles from Tally's topics and buyer questions, format, Shorts per video and the next step each leads to, a 4 week check, and no promised views. Written to media/youtube/plan-<yyyy-mm>.md.
+context:
+  scaffold_script: place-files.sh

@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "which replicate model is cheapest for making product photos?",
+    "compare veo and kling for me, which one should I use for a 10 second clip",
+    "is there a model on replicate that can do lip sync from an audio file?",
+    "what's a good text to speech model on replicate and how much per run",
+    "find me an image model that is good at putting words on posters",
+    "before we make the video, help me pick which AI model to use"
+  ],
+  "should_not_trigger": [
+    "generate the image now with flux, I approve the cost",
+    "make me a 5 second video of a coffee pour",
+    "explain how diffusion models work",
+    "train a machine learning model on my sales data",
+    "which camera should I buy for youtube?",
+    "transcribe my interview recording"
+  ]
+}

@@ -1,0 +1,596 @@
+{
+ "meta": {
+  "source_name": "tip.mp4",
+  "duration": 45.0,
+  "language": "en",
+  "model": "small"
+ },
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 3.8,
+   "text": "Here's the one thing that fixed our standups.",
+   "words": [
+    {
+     "start": 0.0,
+     "end": 0.44,
+     "word": "Here's"
+    },
+    {
+     "start": 0.47,
+     "end": 0.92,
+     "word": "the"
+    },
+    {
+     "start": 0.95,
+     "end": 1.39,
+     "word": "one"
+    },
+    {
+     "start": 1.42,
+     "end": 1.87,
+     "word": "thing"
+    },
+    {
+     "start": 1.9,
+     "end": 2.35,
+     "word": "that"
+    },
+    {
+     "start": 2.38,
+     "end": 2.82,
+     "word": "fixed"
+    },
+    {
+     "start": 2.85,
+     "end": 3.29,
+     "word": "our"
+    },
+    {
+     "start": 3.32,
+     "end": 3.77,
+     "word": "standups."
+    }
+   ]
+  },
+  {
+   "start": 4.0,
+   "end": 9.5,
+   "text": "We stopped asking what did you do yesterday and started asking where are you stuck.",
+   "words": [
+    {
+     "start": 4.0,
+     "end": 4.34,
+     "word": "We"
+    },
+    {
+     "start": 4.37,
+     "end": 4.7,
+     "word": "stopped"
+    },
+    {
+     "start": 4.73,
+     "end": 5.07,
+     "word": "asking"
+    },
+    {
+     "start": 5.1,
+     "end": 5.44,
+     "word": "what"
+    },
+    {
+     "start": 5.47,
+     "end": 5.8,
+     "word": "did"
+    },
+    {
+     "start": 5.83,
+     "end": 6.17,
+     "word": "you"
+    },
+    {
+     "start": 6.2,
+     "end": 6.54,
+     "word": "do"
+    },
+    {
+     "start": 6.57,
+     "end": 6.9,
+     "word": "yesterday"
+    },
+    {
+     "start": 6.93,
+     "end": 7.27,
+     "word": "and"
+    },
+    {
+     "start": 7.3,
+     "end": 7.64,
+     "word": "started"
+    },
+    {
+     "start": 7.67,
+     "end": 8.0,
+     "word": "asking"
+    },
+    {
+     "start": 8.03,
+     "end": 8.37,
+     "word": "where"
+    },
+    {
+     "start": 8.4,
+     "end": 8.74,
+     "word": "are"
+    },
+    {
+     "start": 8.77,
+     "end": 9.1,
+     "word": "you"
+    },
+    {
+     "start": 9.13,
+     "end": 9.47,
+     "word": "stuck."
+    }
+   ]
+  },
+  {
+   "start": 9.8,
+   "end": 15.2,
+   "text": "Across 212 teams in our beta, that one change saved about 3.5 hours a week of status meetings.",
+   "words": [
+    {
+     "start": 9.8,
+     "end": 10.07,
+     "word": "Across"
+    },
+    {
+     "start": 10.1,
+     "end": 10.37,
+     "word": "212"
+    },
+    {
+     "start": 10.4,
+     "end": 10.67,
+     "word": "teams"
+    },
+    {
+     "start": 10.7,
+     "end": 10.97,
+     "word": "in"
+    },
+    {
+     "start": 11.0,
+     "end": 11.27,
+     "word": "our"
+    },
+    {
+     "start": 11.3,
+     "end": 11.57,
+     "word": "beta,"
+    },
+    {
+     "start": 11.6,
+     "end": 11.87,
+     "word": "that"
+    },
+    {
+     "start": 11.9,
+     "end": 12.17,
+     "word": "one"
+    },
+    {
+     "start": 12.2,
+     "end": 12.47,
+     "word": "change"
+    },
+    {
+     "start": 12.5,
+     "end": 12.77,
+     "word": "saved"
+    },
+    {
+     "start": 12.8,
+     "end": 13.07,
+     "word": "about"
+    },
+    {
+     "start": 13.1,
+     "end": 13.37,
+     "word": "3.5"
+    },
+    {
+     "start": 13.4,
+     "end": 13.67,
+     "word": "hours"
+    },
+    {
+     "start": 13.7,
+     "end": 13.97,
+     "word": "a"
+    },
+    {
+     "start": 14.0,
+     "end": 14.27,
+     "word": "week"
+    },
+    {
+     "start": 14.3,
+     "end": 14.57,
+     "word": "of"
+    },
+    {
+     "start": 14.6,
+     "end": 14.87,
+     "word": "status"
+    },
+    {
+     "start": 14.9,
+     "end": 15.17,
+     "word": "meetings."
+    }
+   ]
+  },
+  {
+   "start": 15.5,
+   "end": 20.0,
+   "text": "Stuck is not a failure. It's just a signal someone needs help.",
+   "words": [
+    {
+     "start": 15.5,
+     "end": 15.85,
+     "word": "Stuck"
+    },
+    {
+     "start": 15.88,
+     "end": 16.22,
+     "word": "is"
+    },
+    {
+     "start": 16.25,
+     "end": 16.59,
+     "word": "not"
+    },
+    {
+     "start": 16.62,
+     "end": 16.97,
+     "word": "a"
+    },
+    {
+     "start": 17.0,
+     "end": 17.34,
+     "word": "failure."
+    },
+    {
+     "start": 17.38,
+     "end": 17.72,
+     "word": "It's"
+    },
+    {
+     "start": 17.75,
+     "end": 18.09,
+     "word": "just"
+    },
+    {
+     "start": 18.12,
+     "end": 18.47,
+     "word": "a"
+    },
+    {
+     "start": 18.5,
+     "end": 18.84,
+     "word": "signal"
+    },
+    {
+     "start": 18.88,
+     "end": 19.22,
+     "word": "someone"
+    },
+    {
+     "start": 19.25,
+     "end": 19.59,
+     "word": "needs"
+    },
+    {
+     "start": 19.62,
+     "end": 19.97,
+     "word": "help."
+    }
+   ]
+  },
+  {
+   "start": 20.3,
+   "end": 27.5,
+   "text": "So try three things: ask the stuck question first, keep it to ten minutes, and write blockers where everyone can see them.",
+   "words": [
+    {
+     "start": 20.3,
+     "end": 20.6,
+     "word": "So"
+    },
+    {
+     "start": 20.63,
+     "end": 20.92,
+     "word": "try"
+    },
+    {
+     "start": 20.95,
+     "end": 21.25,
+     "word": "three"
+    },
+    {
+     "start": 21.28,
+     "end": 21.58,
+     "word": "things:"
+    },
+    {
+     "start": 21.61,
+     "end": 21.91,
+     "word": "ask"
+    },
+    {
+     "start": 21.94,
+     "end": 22.23,
+     "word": "the"
+    },
+    {
+     "start": 22.26,
+     "end": 22.56,
+     "word": "stuck"
+    },
+    {
+     "start": 22.59,
+     "end": 22.89,
+     "word": "question"
+    },
+    {
+     "start": 22.92,
+     "end": 23.22,
+     "word": "first,"
+    },
+    {
+     "start": 23.25,
+     "end": 23.54,
+     "word": "keep"
+    },
+    {
+     "start": 23.57,
+     "end": 23.87,
+     "word": "it"
+    },
+    {
+     "start": 23.9,
+     "end": 24.2,
+     "word": "to"
+    },
+    {
+     "start": 24.23,
+     "end": 24.52,
+     "word": "ten"
+    },
+    {
+     "start": 24.55,
+     "end": 24.85,
+     "word": "minutes,"
+    },
+    {
+     "start": 24.88,
+     "end": 25.18,
+     "word": "and"
+    },
+    {
+     "start": 25.21,
+     "end": 25.51,
+     "word": "write"
+    },
+    {
+     "start": 25.54,
+     "end": 25.83,
+     "word": "blockers"
+    },
+    {
+     "start": 25.86,
+     "end": 26.16,
+     "word": "where"
+    },
+    {
+     "start": 26.19,
+     "end": 26.49,
+     "word": "everyone"
+    },
+    {
+     "start": 26.52,
+     "end": 26.82,
+     "word": "can"
+    },
+    {
+     "start": 26.85,
+     "end": 27.14,
+     "word": "see"
+    },
+    {
+     "start": 27.17,
+     "end": 27.47,
+     "word": "them."
+    }
+   ]
+  },
+  {
+   "start": 27.8,
+   "end": 33.0,
+   "text": "Most teams find the meeting gets shorter on its own.",
+   "words": [
+    {
+     "start": 27.8,
+     "end": 28.29,
+     "word": "Most"
+    },
+    {
+     "start": 28.32,
+     "end": 28.81,
+     "word": "teams"
+    },
+    {
+     "start": 28.84,
+     "end": 29.33,
+     "word": "find"
+    },
+    {
+     "start": 29.36,
+     "end": 29.85,
+     "word": "the"
+    },
+    {
+     "start": 29.88,
+     "end": 30.37,
+     "word": "meeting"
+    },
+    {
+     "start": 30.4,
+     "end": 30.89,
+     "word": "gets"
+    },
+    {
+     "start": 30.92,
+     "end": 31.41,
+     "word": "shorter"
+    },
+    {
+     "start": 31.44,
+     "end": 31.93,
+     "word": "on"
+    },
+    {
+     "start": 31.96,
+     "end": 32.45,
+     "word": "its"
+    },
+    {
+     "start": 32.48,
+     "end": 32.97,
+     "word": "own."
+    }
+   ]
+  },
+  {
+   "start": 33.3,
+   "end": 39.0,
+   "text": "If your standup runs long, it's usually because nobody says they're stuck.",
+   "words": [
+    {
+     "start": 33.3,
+     "end": 33.74,
+     "word": "If"
+    },
+    {
+     "start": 33.77,
+     "end": 34.22,
+     "word": "your"
+    },
+    {
+     "start": 34.25,
+     "end": 34.69,
+     "word": "standup"
+    },
+    {
+     "start": 34.72,
+     "end": 35.17,
+     "word": "runs"
+    },
+    {
+     "start": 35.2,
+     "end": 35.64,
+     "word": "long,"
+    },
+    {
+     "start": 35.67,
+     "end": 36.12,
+     "word": "it's"
+    },
+    {
+     "start": 36.15,
+     "end": 36.59,
+     "word": "usually"
+    },
+    {
+     "start": 36.62,
+     "end": 37.07,
+     "word": "because"
+    },
+    {
+     "start": 37.1,
+     "end": 37.55,
+     "word": "nobody"
+    },
+    {
+     "start": 37.58,
+     "end": 38.02,
+     "word": "says"
+    },
+    {
+     "start": 38.05,
+     "end": 38.49,
+     "word": "they're"
+    },
+    {
+     "start": 38.52,
+     "end": 38.97,
+     "word": "stuck."
+    }
+   ]
+  },
+  {
+   "start": 39.3,
+   "end": 45.0,
+   "text": "Try it this week and tell me what changes.",
+   "words": [
+    {
+     "start": 39.3,
+     "end": 39.9,
+     "word": "Try"
+    },
+    {
+     "start": 39.93,
+     "end": 40.54,
+     "word": "it"
+    },
+    {
+     "start": 40.57,
+     "end": 41.17,
+     "word": "this"
+    },
+    {
+     "start": 41.2,
+     "end": 41.8,
+     "word": "week"
+    },
+    {
+     "start": 41.83,
+     "end": 42.44,
+     "word": "and"
+    },
+    {
+     "start": 42.47,
+     "end": 43.07,
+     "word": "tell"
+    },
+    {
+     "start": 43.1,
+     "end": 43.7,
+     "word": "me"
+    },
+    {
+     "start": 43.73,
+     "end": 44.34,
+     "word": "what"
+    },
+    {
+     "start": 44.37,
+     "end": 44.97,
+     "word": "changes."
+    }
+   ]
+  }
+ ]
+}

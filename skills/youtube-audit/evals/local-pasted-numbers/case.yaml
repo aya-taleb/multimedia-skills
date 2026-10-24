@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: local-pasted-numbers
+expected_outcome: |
+  Only views are given. The assistant says what it can and cannot tell from 4 view counts, does not invent CTR or retention numbers or benchmarks, explains how to export the missing columns from YouTube Studio, and gives cautious next steps.

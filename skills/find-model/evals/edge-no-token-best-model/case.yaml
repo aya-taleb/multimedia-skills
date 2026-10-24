@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: edge-no-token-best-model
+expected_outcome: |
+  No REPLICATE_API_TOKEN is set. The assistant does not name a 'best' model from memory as fact. It explains that models change fast so it checks live, explains the free token setup or offers the public search link, and asks what the video is for. No paid runs.

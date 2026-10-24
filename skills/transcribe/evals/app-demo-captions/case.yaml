@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: app-demo-captions
+expected_outcome: |
+  The assistant checks the setup with the tool, finds faster-whisper installed, runs it on the local file with SRT output, writes media/transcripts/demo.md, demo.json and demo.srt, shows the paths and a short stamped preview, says it is a machine transcript to check before publishing, and names a next skill such as talking-head-cards. It does not upload the audio anywhere.
+context:
+  scaffold_script: place-files.sh
