@@ -24,15 +24,15 @@ Make the images, videos and YouTube content for your business, with your own fil
 /plugin install multimedia-skills@multimedia-skills
 
 Some skills here hand off to tools from Jake Schincariol's [master-skills](https://github.com/Jakeschincariol/master-skills)
-(`edit`, `virality`) and [chatgpt-youtube-agent-skill](https://github.com/Jakeschincariol/chatgpt-youtube-agent-skill)
-(`yt-script`, `yt-package`, `yt-retention`, `yt-edit`, `yt-chapters`, `yt-viral`). They are not copied here. Get them,
+(`edit`) and [chatgpt-youtube-agent-skill](https://github.com/Jakeschincariol/chatgpt-youtube-agent-skill)
+(`yt-script`, `yt-package`, `yt-retention`, `yt-edit`, `yt-chapters`). They are not copied here. Get them,
 pinned to a fixed commit, with:
 
 python3 scripts/get_linked.py
 
-Heads up: Jake's `virality` and `yt-viral` suggest using yt-dlp to read public YouTube listings and
-captions. The skills in this repo never do that. If you want to stay off platform tools entirely,
-paste the numbers yourself instead.
+Optional, not installed by the script: Jake's `virality` and `yt-viral` find what's working in your niche.
+They suggest yt-dlp to read YouTube listings, which YouTube's terms don't allow, so this repo leaves them
+out. If you want them, get them from his repos yourself and decide for your own setup.
 
 ## Start here
 

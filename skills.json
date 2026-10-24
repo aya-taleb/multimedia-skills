@@ -125,14 +125,6 @@
       "license": "MIT"
     },
     {
-      "name": "virality",
-      "status": "linked",
-      "repo": "Jakeschincariol/master-skills",
-      "commit": "b5b43e44f0a976ad25bda5095a94c161aab2f086",
-      "path": "skills/virality",
-      "license": "MIT"
-    },
-    {
       "name": "yt-script",
       "status": "linked",
       "repo": "Jakeschincariol/chatgpt-youtube-agent-skill",
@@ -170,14 +162,6 @@
       "repo": "Jakeschincariol/chatgpt-youtube-agent-skill",
       "commit": "6314d3c17dfa1e596096654204e8a09e28cdfd74",
       "path": "skills/yt-chapters",
-      "license": "MIT"
-    },
-    {
-      "name": "yt-viral",
-      "status": "linked",
-      "repo": "Jakeschincariol/chatgpt-youtube-agent-skill",
-      "commit": "6314d3c17dfa1e596096654204e8a09e28cdfd74",
-      "path": "skills/yt-viral",
       "license": "MIT"
     }
   ]

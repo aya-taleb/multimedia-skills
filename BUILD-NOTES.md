@@ -89,3 +89,8 @@ network mocked.
 
 - User data moved out of `~/.claude` (protected by Claude Code) to `~/.founder`: business files, social folders and the media ledger. Tools honor `FOUNDER_HOME`; tests use a temp one.
 - generate-images: the spend ledger is `<FOUNDER_HOME or ~/.founder>/media/spend-ledger.json`; `MEDIA_LEDGER` still wins. Tests use `FOUNDER_HOME`.
+
+## Decision, Oct 24
+
+Aya decided: `virality` and `yt-viral` are no longer linked from this repo, because they suggest
+yt-dlp. The README lists them as optional with the reason. She keeps a personal copy on her own Mac.
