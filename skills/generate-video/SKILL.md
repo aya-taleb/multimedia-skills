@@ -2,7 +2,7 @@
 name: generate-video
 description: >-
   Write the prompt for one AI video clip (scene, camera, dialogue, sound) and run it on
-  Replicate with the user's own token: price first, nothing spent until they say yes, a $5
+  Replicate with the user's own token: price first, nothing spent until they say yes, a $2
   per-session cap, every clip saved to media/video/ right away, and clear handling of failed
   runs, rate limits, cold boots and timeouts. Use it for any request to generate a video
   clip with AI, including ones it must turn down or reshape, like "make a video of [a real
@@ -111,7 +111,7 @@ python3 replicate_run.py run owner/model -i prompt="..." -i duration=5 -i aspect
 
 The first call is always a dry run, and it is the step that proves the inputs are valid.
 `price` alone is not enough, because it does not check the schema. Show the model, the prompt, the settings, the cost, the
-session total and what is left under the cap ($5 unless the user changed it). Ask. If the
+session total and what is left under the cap ($2 unless the user changed it). Ask. If the
 user named a budget earlier ("go ahead up to $2") and the estimate fits it and the cap, that
 is the yes: say the number, then run.
 

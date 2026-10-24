@@ -15,7 +15,7 @@ Commands
 Money rules built in
   * Nothing is spent without --yes. Without it, run is a dry run that prints the estimate.
   * One prediction per call. No batches, no parallel fan-out.
-  * Each session (ends after 12 idle hours) has a cap, default $5. The estimate is
+  * Each session (ends after 12 idle hours) has a cap, default $2. The estimate is
     reserved before the run starts, so two calls at once cannot both slip under the cap.
   * If the price cannot be found, the tool refuses unless you pass --assume-cost.
   * A failed create (5xx, dropped connection) is never retried blindly, since it may
@@ -54,7 +54,7 @@ def _local_override(name, default):
 API = _local_override("REPLICATE_API_BASE", "https://api.replicate.com/v1")
 SITE = _local_override("REPLICATE_SITE_BASE", "https://replicate.com")
 USER_AGENT = "aya-taleb-multimedia-skills/0.1 (+https://github.com/aya-taleb/multimedia-skills)"
-DEFAULT_CAP = 5.00
+DEFAULT_CAP = 2.00
 SESSION_IDLE_HOURS = 12
 DATA_URL_LIMIT = 256 * 1024
 TERMINAL = ("succeeded", "failed", "canceled", "aborted")

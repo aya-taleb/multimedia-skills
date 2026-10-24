@@ -13,7 +13,7 @@ that are changed from Replicate's work:
 
 | our file | changed from | what changed |
 | --- | --- | --- |
-| skills/generate-images/SKILL.md | skills/prompt-images/SKILL.md, skills/run-models/SKILL.md | merged into one skill; added token setup, price check, yes before spend, $5 session cap, one run at a time, error handling, saving outputs at once, honesty rules; removed "fire off multiple predictions concurrently" |
+| skills/generate-images/SKILL.md | skills/prompt-images/SKILL.md, skills/run-models/SKILL.md | merged into one skill; added token setup, price check, yes before spend, $2 session cap, one run at a time, error handling, saving outputs at once, honesty rules; removed "fire off multiple predictions concurrently" |
 | skills/generate-images/references/prompting-images.md | skills/prompt-images/SKILL.md | trimmed and reworded; added brand and honesty notes |
 | skills/generate-images/references/replicate-api.md | skills/run-models/SKILL.md, skills/find-models/SKILL.md | one docs list instead of a copy in every skill; added rate limits, prediction states, deadlines, data retention, how prices are found |
 | skills/generate-images/scripts/replicate_run.py | skills/run-models/SKILL.md (no code upstream) | new tool: price lookup and estimate, `--yes` gate, spend ledger and cap, polling with backoff, 429 and cold boot handling, timeouts with cancel, immediate downloads |

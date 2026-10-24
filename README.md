@@ -43,7 +43,7 @@ No Replicate account yet? Start with `/transcribe` or `/launch-video`, which run
 
 ## Good to know
 
-- **The generate skills cost money.** `generate-images` and `generate-video` run paid models on Replicate with your own token. Each run shows its price first and waits for your yes. There is a $5 spend cap per session, kept in a small ledger file, and only you can raise it. Video is the priciest: a single clip can cost more than a hundred images.
+- **The generate skills cost money.** `generate-images` and `generate-video` run paid models on Replicate with your own token. Each run shows its price first and waits for your yes. There is a $2 spend cap per session, kept in a small ledger file, and only you can raise it. Video is the priciest: a single clip can cost more than a hundred images.
 - Your token stays in your shell (`REPLICATE_API_TOKEN`). The skills never put it in a file, a chat reply or a command they show you.
 - Outputs are saved to `media/` the moment they finish, because Replicate deletes them after an hour.
 - Your own files only. Nothing here downloads from YouTube, Instagram, TikTok or any other platform, and nothing posts for you. You upload and post.

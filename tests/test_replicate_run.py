@@ -320,8 +320,8 @@ class DryRunAndCap(Base):
         self.assertEqual(code, rr.EXIT_CAP)
         self.assertEqual(self.net.count("POST", "/predictions"), 2)
 
-    def test_default_cap_is_five(self):
-        self.assertEqual(rr.load_ledger(rr.ledger_path())["cap"], 5.0)
+    def test_default_cap_is_two(self):
+        self.assertEqual(rr.load_ledger(rr.ledger_path())["cap"], 2.0)
 
     def test_session_resets_after_idle(self):
         rr.reserve("acme/img", 1.0, "")
@@ -421,7 +421,7 @@ class Running(Base):
             rec = json.load(fh)
         self.assertEqual(rec["status"], "failed")
         self.assertIn("E005", rec["error"])
-        self.assertIn("Session spend: $0.0400 of the $5.00 cap", text)
+        self.assertIn("Session spend: $0.0400 of the $2.00 cap", text)
 
     def test_canceled_prediction(self):
         self.standard_model()

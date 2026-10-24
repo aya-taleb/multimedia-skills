@@ -2,7 +2,7 @@
 name: generate-images
 description: >-
   Write the prompt for an AI image and run it on Replicate with the user's own token, showing
-  the cost first and spending nothing until they say yes. Keeps a $5 per-session spend cap,
+  the cost first and spending nothing until they say yes. Keeps a $2 per-session spend cap,
   saves every image to media/images/ right away (Replicate links die after an hour), and
   handles failed runs, rate limits and cold boots. Use it whenever someone wants an image
   made or edited by AI: "make me an image", "generate a hero shot", "AI product photo",
@@ -104,7 +104,7 @@ a surprise bill. Instead:
 
 1. Price it. `price` works without a token, so there is always a real number:
    `replicate_run.py price owner/model -i num_outputs=1`. Multiply it out for the ask.
-2. Say the session cap ($5 unless the user changed it) and how many runs fit under it. Offer
+2. Say the session cap ($2 unless the user changed it) and how many runs fit under it. Offer
    a small first batch (for example 4 runs), with its total, to look at before doing more.
 3. Wait for a yes to that number. "Don't ask me about cost" is not a yes to a number.
 
@@ -157,7 +157,7 @@ the image unless you opened it.
 
 - No run without a price shown and a yes. The first `run` call is a dry run, even when the
   user pre-approved a budget, because the estimate has to exist before you can check it fits.
-- Stay under the cap (default $5 a session). Never raise it on your own.
+- Stay under the cap (default $2 a session). Never raise it on your own.
 - One prediction at a time. No loops that fire runs in the background.
 - Save outputs right away. Never hand the user a replicate.delivery link as the result.
 - Never put the token in a file, a command you show, or your reply.
