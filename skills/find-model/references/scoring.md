@@ -25,9 +25,9 @@ A finalist missing a must-have is out. Do not score it.
 | --- | --- | --- |
 | Fit | 40 | 40, minus 5 for each nice-to-have the schema lacks |
 | Cost | 25 | 25 x (cheapest price / this price), for the user's settings |
-| Speed | 15 | official and a fast or turbo tier: 15. Official: 10. Community: 5 |
-| Fresh | 10 | latest version under 6 months old: 10. 6 to 12 months: 5. Older: 0 |
-| Proof | 10 | official: +5. Page examples close to the job: +5 |
+| Speed | 15 | no cold boot and a fast tier the provider names (schnell, klein, turbo, fast, flash, flare): 15. No cold boot: 10. Replicate community model: 5 |
+| Fresh | 10 | latest version or release under 6 months old: 10. 6 to 12 months: 5. Older: 0. Date unknown: 5, marked "date unknown" |
+| Proof | 10 | official or first-party: +5. Examples close to the job: +5 |
 
 Round each part to a whole number.
 
@@ -38,12 +38,17 @@ second, so $3.00. A gets 25. B gets 25 x 0.75 / 3.00 = 6.
 When a model is billed by GPU time, use the typical run cost from its page, doubled for cold
 boots, and mark it "estimate".
 
+Models from different providers compare on the same numbers: dollars for the user's job. For
+table providers, use the `price` output, which includes any margin the table adds (OpenAI 2.5
+models +25%, Gemini Omni Flash +10% and an assumed 10 s clip). Say when a price is a table
+price and give its checked date. A Runway price is credits x $0.01.
+
 ## Step 3: show it
 
 ```
-| model | price for your job | fit | cost | speed | fresh | proof | total |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| owner/model-a | $0.75 (6 x 5s, 720p) | 40 | 25 | 15 | 10 | 5 | 95 |
+| provider | model | price for your job | fit | cost | speed | fresh | proof | total |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| replicate | owner/model-a | $0.75 (6 x 5s, 720p) | 40 | 25 | 15 | 10 | 5 | 95 |
 ```
 
 Under the table, list what the score cannot see: real output quality, real wait time, and
@@ -57,6 +62,9 @@ the user's own must-haves, not on taste alone.
 
 ## Speed, in more detail
 
-- Official models are always warm. Community models can cold boot, which can add minutes.
+- Replicate official models are always warm. Community models can cold boot, which can add
+  minutes.
+- Cloudflare, OpenAI, Runway and Google host their own models, so there is no cold boot. Runway
+  can queue a task (`THROTTLED`) when the account hits its concurrency limit.
 - `predict_time` in a finished run's metrics is the real number. It only exists after a paid
   run, so it never feeds this score directly.

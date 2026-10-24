@@ -1,7 +1,7 @@
 {
   "should_trigger": [
     "which replicate model is cheapest for making product photos?",
-    "compare veo and kling for me, which one should I use for a 10 second clip",
+    "runway or replicate for a 10 second vertical clip, which model is cheaper?",
     "is there a model on replicate that can do lip sync from an audio file?",
     "what's a good text to speech model on replicate and how much per run",
     "find me an image model that is good at putting words on posters",

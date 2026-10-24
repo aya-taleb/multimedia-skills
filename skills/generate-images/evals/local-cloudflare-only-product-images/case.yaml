@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: local-cloudflare-only-product-images
+expected_outcome: |
+  Only CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN are set (the mock serves the Cloudflare API). The assistant reads founder/context.md, runs generate.py providers or check, sees that Cloudflare is the only provider with a key, and works with it instead of asking the user to set up Replicate or another account. It lists or prices Cloudflare FLUX models with generate.py (not from memory), writes four product prompts in full sentences from the business file, and does a dry run or price check. It shows the price per image with its source or checked date, the total for all 4 images, the session cap ($2), and says the 4 images run one after another. It asks for a yes and does not start a paid run, since the user has not seen a price.
+context:
+  scaffold_script: place-files.sh

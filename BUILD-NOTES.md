@@ -94,3 +94,93 @@ network mocked.
 
 Aya decided: `virality` and `yt-viral` are no longer linked from this repo, because they suggest
 yt-dlp. The README lists them as optional with the reason. She keeps a personal copy on her own Mac.
+
+## Multi-provider update, Oct 24
+
+`generate-images`, `generate-video` and `find-model` now work with five providers through one
+entry tool, `skills/generate-images/scripts/generate.py`. `replicate_run.py` still works on
+its own and shares the same ledger. Every endpoint, header, request and response shape,
+polling pattern and price came from the providers' own docs on 2026-10-24. Each is listed with
+its link in `skills/generate-images/references/providers.md`; prices are in
+`skills/generate-images/scripts/prices.json`, each with its source and checked date.
+
+| provider | kind | key | models in the table |
+| --- | --- | --- | --- |
+| replicate | image, video | `REPLICATE_API_TOKEN` | any (live search and live page prices, as before) |
+| cloudflare | image | `CLOUDFLARE_ACCOUNT_ID` + `CLOUDFLARE_API_TOKEN` | flux-1-schnell, flux-2-klein-4b, flux-2-dev |
+| openai | image | `OPENAI_API_KEY` | gpt-image-2.5-flare, gpt-image-2.5-sunburst, gpt-image-2, gpt-image-1.5, gpt-image-1-mini |
+| runway | video | `RUNWAYML_API_SECRET` (header `X-Runway-Version: 2024-11-06`) | gen4_turbo, gen4.5, veo3.1_fast, veo3.1 |
+| google | video | `GEMINI_API_KEY` (or `GOOGLE_API_KEY`) | gemini-omni-1.1-flash |
+
+### Things that changed under us (found while checking the docs)
+
+- **OpenAI shut down gpt-image-1 on 2026-10-23.** The current models are GPT Image 2.5 Flare and
+  Sunburst. The brief named gpt-image-1, so the table uses the 2.5 models instead.
+- **Veo is no longer in the Gemini API.** Veo 3.1 Preview shut down on 2026-10-22, and the Veo 2
+  and 3.0 models on 2026-06-30. Google's replacement there is Gemini Omni Flash, which uses the
+  Interactions API (create in the background, then poll). The google provider runs Omni Flash. Veo 3.1 and Veo 3.1 Fast are still reachable through Runway, so they are in the
+  Runway table.
+
+### Live checks: to run with Aya
+
+No paid call was made. No real key exists here; every provider path is unit tested with the
+network mocked. Run these with real keys, in this order, from the repo root. Expected total:
+about $1.25 on the ledger, most of it the one Google clip. The default $2 cap covers it.
+
+```
+G=skills/generate-images/scripts/generate.py
+python3 $G ledger --new-session
+python3 $G providers
+python3 $G check                      # free: one call per provider with a key
+python3 $G models --kind image        # free: "listed live: yes" next to each table model
+python3 $G models --kind video        # free
+```
+
+| # | provider | command (dry run first, then add --yes) | expected cost |
+| --- | --- | --- | --- |
+| 1 | replicate | `python3 $G run black-forest-labs/flux-schnell -i prompt="a red bike on a quiet street" --label live-rep` | about $0.003 |
+| 2 | cloudflare | `python3 $G run @cf/black-forest-labs/flux-1-schnell -i prompt="a red bike on a quiet street" --label live-cf` | $0.0019 on the ledger, likely $0 billed (free daily neurons) |
+| 3 | cloudflare | `python3 $G run @cf/black-forest-labs/flux-2-klein-4b -i prompt="a red bike on a quiet street" -i width=512 -i height=512 --label live-cf2` | $0.0003 (checks the multipart path) |
+| 4 | openai | `python3 $G run gpt-image-2.5-flare -i prompt="a red bike on a quiet street" -i quality=low --label live-oa` | $0.0074 on the ledger, about $0.006 billed |
+| 5 | runway | `python3 $G run gen4_turbo -i prompt="slow push in" -i promptImage=@media/images/<the file from step 2> -i ratio=960:960 -i duration=2 --out media/video --label live-rw` | $0.10 (10 credits) |
+| 6 | google | `python3 $G run gemini-omni-1.1-flash -i prompt="A single continuous shot of a red bike leaning on a brick wall. No scene cuts, no dialogue." -i resolution=360p --out media/video --timeout 900 --label live-gm` | $1.12 on the ledger, $0.30 to $1.02 billed by clip length |
+
+After each `--yes` run, check: the file is in `media/images/` or `media/video/`, the `.json`
+record is written, and `python3 $G ledger` matches the provider's dashboard. Then:
+
+- Runway: the task's `cost.credits` should replace the estimate on the ledger.
+- Google: confirm Omni accepts `"background": true` and that polling `GET /v1beta/interactions/{id}`
+  returns the video. The docs show it for "standard Gemini models" and list `background=false`
+  as an Omni option, but no Omni example uses it. If it fails with a 400, the fix is a
+  synchronous call with a long timeout; tell me and I will change it. Also check that `usage`
+  comes back, so the ledger can use the real token count.
+- OpenAI: see whether `usage` comes back for 2.5 models (the docs say "gpt-image-1 only").
+- Free failure checks, no spend: `OPENAI_API_KEY=sk-wrong python3 $G check --provider openai`
+  (should say the key is not valid and not print it), and the same for each provider.
+
+Not testable without real accounts: real 429s, a real refusal from each provider's safety
+system, a real timeout. Each is unit tested with a mocked network.
+
+### Calls Aya should review
+
+1. **Upper-bound pricing where docs are unclear.** Cloudflare schnell's step price is charged
+   per tile; schnell output is assumed 1024x1024; klein input images count as 16 tiles. OpenAI
+   2.5 adds 25% (OpenAI says token use differs by model). Omni assumes a 10 s clip plus 10%.
+   Every one of these makes the estimate high, never low.
+2. **Refused and failed runs stay on the ledger** unless the provider reports the real cost
+   (Runway `cost.credits`, Google `usage`). Runway says `SAFETY.INPUT` failures are not refunded;
+   OpenAI and Google do not say. This can make the ledger read higher than the bill.
+3. **Runway 502 and 503 on create are retried**, because Runway's error page says they mean load
+   shedding. Every other 5xx on create is never retried, as before.
+4. **Auto-pick.** With one provider key for the job, that provider is the default. With several
+   and no saved order, the tool says "ask the user", and the skill asks once and saves the order
+   to `~/.founder/media/providers.json`.
+5. **Not wired in:** OpenAI image edits, Runway and Google audio models, Runway image models,
+   Omni 1080p and 4K (no published rate, so they need `--assume-cost`), Omni editing and
+   extension. Replicate still covers audio, upscaling and edits.
+6. **generate.py is about 1,100 lines**, longer than "lean". Most of it is the four provider
+   paths and their error handling; splitting it into modules is easy later if you prefer.
+7. Gemini interactions are stored by Google (`store` must be on for background runs). The tool
+   does not delete them after download. A delete call exists if you want it.
+8. **instagram-carousel** said "--cap 5" and its eval said "$5 default cap", left over from
+   before the $2 change. Fixed both in instagram-boost-skills while syncing.

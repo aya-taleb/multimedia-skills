@@ -3,6 +3,8 @@
 
 Changed by Aya Taleb from Replicate's run-models skill (Apache 2.0): upstream had no code.
 This tool is new. Standard library only, Python 3.8+.
+generate.py is the entry tool for every provider and calls this one for Replicate. Both share
+one spend ledger, so this file still works on its own and nothing that calls it breaks.
 
 Commands
   check                      Is REPLICATE_API_TOKEN set and valid? (free call)
@@ -543,7 +545,7 @@ def reserve(model_ref, cost, note):
             raise ToolError(
                 "Stopped: this run (about $%.4f) would take the session past its $%.2f cap "
                 "($%.4f spent so far). Nothing was run. If you want to spend more, ask the user, then: "
-                "replicate_run.py ledger --set-cap <dollars>" % (cost, data["cap"], total), EXIT_CAP)
+                "generate.py ledger --set-cap <dollars> (one cap for every provider)" % (cost, data["cap"], total), EXIT_CAP)
         entry = {"id": uuid.uuid4().hex[:12], "model": model_ref, "cost": round(cost, 6),
                  "status": "pending", "note": note, "at": now().isoformat()}
         data["entries"].append(entry)

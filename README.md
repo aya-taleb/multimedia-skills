@@ -6,9 +6,10 @@ Make the images, videos and YouTube content for your business, with your own fil
 
 | I want to... | run this |
 | --- | --- |
-| Make or edit an image with AI (costs money, you approve every run) | /generate-images |
-| Make a short AI video clip, with sound or dialogue (costs money, you approve every run) | /generate-video |
-| Pick the right AI model and see what it costs, without running anything | /find-model |
+| Make or edit an image with AI on Replicate, Cloudflare or OpenAI (costs money, you approve every run) | /generate-images |
+| Make a short AI video clip, with sound or dialogue, on Replicate, Runway or Google (costs money, you approve every run) | /generate-video |
+| Pick the right AI model across the accounts I have and see what it costs, without running anything | /find-model |
+| Use the API account I already have instead of opening a new one | /generate-images or /generate-video (they check which keys you have) |
 | Get a transcript or captions (SRT, VTT) from my own recording | /transcribe |
 | Put text cards over my talking-head or podcast clip as I say each point | /talking-head-cards |
 | Turn my product page or brief into a 30 to 60 second launch video | /launch-video |
@@ -37,22 +38,24 @@ out. If you want them, get them from his repos yourself and decide for your own 
 ## Start here
 
 Run `/find-model` with what you want to make, for example "a 5 second vertical clip of a coffee pour".
-It searches Replicate live, prices the options and recommends one, for free.
+It checks which provider keys you have, prices the options and recommends one, for free.
 Then run `/generate-video` or `/generate-images` to make it. You see the cost and say yes before anything runs.
-No Replicate account yet? Start with `/transcribe` or `/launch-video`, which run free on your own machine.
+No AI account yet? Start with `/transcribe` or `/launch-video`, which run free on your own machine.
 
 ## Good to know
 
-- **The generate skills cost money.** `generate-images` and `generate-video` run paid models on Replicate with your own token. Each run shows its price first and waits for your yes. There is a $2 spend cap per session, kept in a small ledger file, and only you can raise it. Video is the priciest: a single clip can cost more than a hundred images.
-- Your token stays in your shell (`REPLICATE_API_TOKEN`). The skills never put it in a file, a chat reply or a command they show you.
-- Outputs are saved to `media/` the moment they finish, because Replicate deletes them after an hour.
+- **The generate skills cost money.** `generate-images` and `generate-video` run paid models with your own account. Each run shows its price first and waits for your yes. There is one $2 spend cap per session for all providers together, kept in a small ledger file, and only you can raise it. Video is the priciest: a single clip can cost more than a hundred images.
+- **Bring the account you have.** Images: Replicate, Cloudflare Workers AI (FLUX) or OpenAI (GPT Image). Video: Replicate, Runway (Gen-4, Veo 3.1) or Google's Gemini API (Omni Flash). Prices for providers with no price API come from a dated table with a source link for each price, and the tool warns when a date is old.
+- Your keys stay in your shell (`REPLICATE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN`, `OPENAI_API_KEY`, `RUNWAYML_API_SECRET`, `GEMINI_API_KEY`). The skills never put them in a file, a chat reply or a command they show you.
+- Outputs are saved to `media/` the moment they finish, because provider links expire (Replicate's after an hour).
 - Your own files only. Nothing here downloads from YouTube, Instagram, TikTok or any other platform, and nothing posts for you. You upload and post.
 - Nothing made up: no invented stats, reviews, quotes or endorsements in images, videos, cards or copy. Missing numbers become `{{your number}}`.
 
 ## Credits
 
 Made by Aya Taleb (github.com/aya-taleb). `generate-images`, `generate-video` and `find-model` are built on Replicate's
-[skills](https://github.com/replicate/skills) (Apache 2.0). `launch-video` builds with HeyGen's
+[skills](https://github.com/replicate/skills) (Apache 2.0), and call Cloudflare, OpenAI, Runway and Google APIs as their public docs describe.
+This repo is not made by or affiliated with any of these companies. `launch-video` builds with HeyGen's
 [HyperFrames](https://github.com/heygen-com/hyperframes) (Apache 2.0) when you have it. `transcribe` uses
 [faster-whisper](https://github.com/SYSTRAN/faster-whisper) (MIT). `talking-head-cards` follows the approach of
 [vtake-skills](https://github.com/notedit/vtake-skills) by leeoxiang. Thanks to Jake Schincariol for the ideas behind

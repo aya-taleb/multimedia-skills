@@ -22,6 +22,14 @@ that are changed from Replicate's work:
 | skills/find-model/SKILL.md | skills/find-models/SKILL.md, skills/compare-models/SKILL.md | merged; added live price lookup, a free-only rule, a no-token path and stronger trigger description |
 | skills/find-model/references/scoring.md | skills/compare-models/SKILL.md | new scoring method (upstream had none) |
 
+Later changes, Oct 24 2026: the three skills above now also run on Cloudflare Workers AI,
+OpenAI, Runway and Google's Gemini API. These files are new and hold no Replicate text:
+`skills/generate-images/scripts/generate.py` (entry tool for every provider, which calls
+`replicate_run.py` for Replicate), `skills/generate-images/scripts/prices.json` (dated price
+table) and `skills/generate-images/references/providers.md` (provider facts). The facts in them
+come from each provider's public API docs, linked inside. No code or text was copied from
+those docs or from any SDK.
+
 ## Thanks (ideas and tools, nothing copied)
 
 - **HyperFrames** by HeyGen (Apache 2.0), https://github.com/heygen-com/hyperframes. `launch-video`

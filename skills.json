@@ -8,7 +8,7 @@
       "synced_to": [
         "instagram-boost-skills"
       ],
-      "version": "0.1.0",
+      "version": "0.2.0",
       "source": {
         "repo": "replicate/skills",
         "commit": "2f36e415965ae63baa1c9f6635888092bcd771d3",
@@ -22,7 +22,7 @@
     {
       "name": "find-model",
       "status": "reworked",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "source": {
         "repo": "replicate/skills",
         "commit": "2f36e415965ae63baa1c9f6635888092bcd771d3",
@@ -36,7 +36,7 @@
     {
       "name": "generate-video",
       "status": "reworked",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "source": {
         "repo": "replicate/skills",
         "commit": "2f36e415965ae63baa1c9f6635888092bcd771d3",

@@ -1,0 +1,313 @@
+{
+  "_about": "Price and input table for providers with no price API. Every number was read from the provider's own docs on the date in 'checked'. generate.py warns when a date is more than 60 days old. Replicate is not here: its prices are read live from each model page. Facts and links: ../references/providers.md",
+  "stale_after_days": 60,
+  "providers": {
+    "cloudflare": {
+      "kind": "image",
+      "source": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+      "checked": "2026-10-24",
+      "note": "Workers AI bills $0.011 per 1,000 neurons above a free 10,000 neurons a day. The ledger counts the full price anyway, so the cap never relies on the free allowance.",
+      "models": {
+        "@cf/black-forest-labs/flux-1-schnell": {
+          "label": "FLUX.1 [schnell] on Workers AI",
+          "body": "json",
+          "summary": "about $0.0019 per image at the default 4 steps",
+          "notes": "Fast 12B text to image model. JSON input with only prompt and steps; no size, seed or image input in its schema.",
+          "docs": "https://developers.cloudflare.com/workers-ai/models/flux-1-schnell/",
+          "inputs": {
+            "prompt": {"type": "string", "required": true, "max_length": 2048},
+            "steps": {"type": "integer", "min": 1, "max": 8, "default": 4, "send_default": true}
+          },
+          "price": {
+            "method": "tiles",
+            "assume_size": [1024, 1024],
+            "per_output_tile": 0.0000528,
+            "per_output_tile_step": 0.0001056,
+            "steps_key": "steps",
+            "why": "The pricing page lists $0.0000528 per 512x512 tile and $0.0001056 per step. It does not say whether the step price is per tile, so the tool charges it per tile (the higher reading). The schema has no size input and the docs do not state the output size, so the tool assumes 1024x1024 (4 tiles)."
+          }
+        },
+        "@cf/black-forest-labs/flux-2-klein-4b": {
+          "label": "FLUX.2 [klein] 4B on Workers AI",
+          "body": "multipart",
+          "released": "2026-01-15",
+          "summary": "about $0.0011 per 1024x768 image; input images add up to $0.0009 each",
+          "notes": "Distilled, fixed 4 steps, generation and editing in one model, up to 4 input images. Multipart form input.",
+          "docs": "https://developers.cloudflare.com/changelog/post/2026-01-15-flux-2-klein-4b-workers-ai/",
+          "inputs": {
+            "prompt": {"type": "string", "required": true},
+            "width": {"type": "integer", "min": 256, "max": 1920, "default": 1024, "send_default": true},
+            "height": {"type": "integer", "min": 256, "max": 1920, "default": 768, "send_default": true},
+            "guidance": {"type": "number"},
+            "seed": {"type": "integer"},
+            "input_image_0": {"type": "file"},
+            "input_image_1": {"type": "file"},
+            "input_image_2": {"type": "file"},
+            "input_image_3": {"type": "file"}
+          },
+          "price": {
+            "method": "tiles",
+            "per_output_tile": 0.000287,
+            "per_input_tile": 0.000059,
+            "input_tiles_each": 16,
+            "why": "$0.000287 per output 512x512 tile and $0.000059 per input tile. Tiles are counted by rounding each side up to a multiple of 512. The docs do not give input image sizes, so each input image is counted as 16 tiles (1920x1920, the largest size the model takes)."
+          }
+        },
+        "@cf/black-forest-labs/flux-2-dev": {
+          "label": "FLUX.2 [dev] on Workers AI",
+          "body": "multipart",
+          "released": "2025-11-25",
+          "summary": "about $0.041 per 1024x768 image at 25 steps",
+          "notes": "Higher fidelity, slower, up to 4 input images (512x512 each). Multipart form input.",
+          "docs": "https://developers.cloudflare.com/changelog/post/2025-11-25-flux-2-dev-workers-ai/",
+          "inputs": {
+            "prompt": {"type": "string", "required": true},
+            "steps": {"type": "integer", "min": 1, "default": 25, "send_default": true},
+            "width": {"type": "integer", "min": 256, "max": 1920, "default": 1024, "send_default": true},
+            "height": {"type": "integer", "min": 256, "max": 1920, "default": 768, "send_default": true},
+            "guidance": {"type": "number"},
+            "input_image_0": {"type": "file"},
+            "input_image_1": {"type": "file"},
+            "input_image_2": {"type": "file"},
+            "input_image_3": {"type": "file"}
+          },
+          "price": {
+            "method": "tiles",
+            "per_output_tile_step": 0.00041,
+            "per_input_tile_step": 0.00021,
+            "input_tiles_each": 1,
+            "steps_key": "steps",
+            "why": "$0.00041 per output 512x512 tile per step and $0.00021 per input tile per step. Cloudflare's changelog says input images are 512x512 (1 tile). The steps default is not documented, so the tool always sends steps (25, as in Cloudflare's example)."
+          }
+        }
+      }
+    },
+    "openai": {
+      "kind": "image",
+      "source": "https://developers.openai.com/api/docs/guides/image-generation",
+      "checked": "2026-10-24",
+      "note": "gpt-image-1 was shut down on 2026-10-23 and DALL-E 2 and 3 on 2026-05-12. Prices are per image output. The tool sends quality and size every time, because the API default (auto) has no fixed price.",
+      "models": {
+        "gpt-image-2.5-flare": {
+          "label": "GPT Image 2.5 Flare",
+          "released": "2026-09-08",
+          "summary": "medium 1024x1024 about $0.013 per image (with a 25% margin, $0.017)",
+          "notes": "OpenAI: 'Flare for fast, high-quality everyday image generation'.",
+          "docs": "https://developers.openai.com/api/docs/models/gpt-image-2.5-flare",
+          "inputs": "openai_25",
+          "price": "openai_25"
+        },
+        "gpt-image-2.5-sunburst": {
+          "label": "GPT Image 2.5 Sunburst",
+          "released": "2026-09-08",
+          "summary": "medium 1024x1024 about $0.013 per image (with a 25% margin, $0.017)",
+          "notes": "OpenAI: 'Sunburst for workflows where editing precision matters most'. Same token rates as Flare.",
+          "docs": "https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst",
+          "inputs": "openai_25",
+          "price": "openai_25"
+        },
+        "gpt-image-2": {
+          "label": "GPT Image 2",
+          "released": "2026-04-21",
+          "summary": "medium 1024x1024 $0.053 per image",
+          "notes": "Earlier model. OpenAI suggests 2.5 Sunburst or Flare for new work.",
+          "docs": "https://developers.openai.com/api/docs/guides/image-generation",
+          "inputs": "openai_3q",
+          "price": {
+            "method": "per_image",
+            "by": ["quality", "size"],
+            "count_key": "n",
+            "text_per_million": 5.0,
+            "table": {
+              "low|1024x1024": 0.006, "low|1024x1536": 0.005, "low|1536x1024": 0.005,
+              "medium|1024x1024": 0.053, "medium|1024x1536": 0.041, "medium|1536x1024": 0.041,
+              "high|1024x1024": 0.211, "high|1024x1536": 0.165, "high|1536x1024": 0.165
+            },
+            "why": "Per image prices from the table in OpenAI's image generation guide. A small allowance for prompt text is added at $5 per million tokens."
+          }
+        },
+        "gpt-image-1.5": {
+          "label": "GPT Image 1.5",
+          "summary": "medium 1024x1024 $0.034 per image",
+          "notes": "Older model, still listed.",
+          "docs": "https://developers.openai.com/api/docs/guides/image-generation",
+          "inputs": "openai_3q",
+          "price": {
+            "method": "per_image",
+            "by": ["quality", "size"],
+            "count_key": "n",
+            "text_per_million": 5.0,
+            "table": {
+              "low|1024x1024": 0.009, "low|1024x1536": 0.013, "low|1536x1024": 0.013,
+              "medium|1024x1024": 0.034, "medium|1024x1536": 0.05, "medium|1536x1024": 0.05,
+              "high|1024x1024": 0.133, "high|1024x1536": 0.2, "high|1536x1024": 0.2
+            },
+            "why": "Per image prices from the legacy table in OpenAI's image generation guide, plus a small prompt text allowance."
+          }
+        },
+        "gpt-image-1-mini": {
+          "label": "GPT Image 1 Mini",
+          "summary": "medium 1024x1024 $0.011 per image",
+          "notes": "Cheapest OpenAI image model listed.",
+          "docs": "https://developers.openai.com/api/docs/guides/image-generation",
+          "inputs": "openai_3q",
+          "price": {
+            "method": "per_image",
+            "by": ["quality", "size"],
+            "count_key": "n",
+            "text_per_million": 5.0,
+            "table": {
+              "low|1024x1024": 0.005, "low|1024x1536": 0.006, "low|1536x1024": 0.006,
+              "medium|1024x1024": 0.011, "medium|1024x1536": 0.015, "medium|1536x1024": 0.015,
+              "high|1024x1024": 0.036, "high|1024x1536": 0.052, "high|1536x1024": 0.052
+            },
+            "why": "Per image prices from the legacy table in OpenAI's image generation guide, plus a small prompt text allowance."
+          }
+        }
+      },
+      "shared": {
+        "openai_25": {
+          "inputs": {
+            "prompt": {"type": "string", "required": true, "max_length": 32000},
+            "n": {"type": "integer", "min": 1, "max": 10, "default": 1},
+            "size": {"type": "string", "pattern": "^(auto|[0-9]+x[0-9]+)$", "default": "1024x1024", "send_default": true},
+            "quality": {"type": "string", "enum": ["low", "medium", "high", "xhigh", "max"], "default": "medium", "send_default": true},
+            "background": {"type": "string", "enum": ["transparent", "opaque", "auto"]},
+            "output_format": {"type": "string", "enum": ["png", "jpeg", "webp"]},
+            "output_compression": {"type": "integer", "min": 0, "max": 100},
+            "moderation": {"type": "string", "enum": ["low", "auto"]}
+          },
+          "price": {
+            "method": "per_image",
+            "by": ["quality", "size"],
+            "count_key": "n",
+            "margin": 1.25,
+            "text_per_million": 5.0,
+            "table": {
+              "low|1024x1024": 0.00588, "low|1024x1536": 0.00474, "low|1536x1024": 0.00474,
+              "medium|1024x1024": 0.01317, "medium|1024x1536": 0.01029, "medium|1536x1024": 0.01029,
+              "high|1024x1024": 0.05268, "high|1024x1536": 0.04116, "high|1536x1024": 0.04116,
+              "xhigh|1024x1024": 0.09366, "xhigh|1024x1536": 0.07377, "xhigh|1536x1024": 0.07377,
+              "max|1024x1024": 0.21072, "max|1024x1536": 0.16464, "max|1536x1024": 0.16464
+            },
+            "why": "Output tokens from OpenAI's GPT Image 2.5 cost calculator, at $30 per million image output tokens. OpenAI says token use can differ by model and quality, so the estimate adds 25%. Prompt text is added at $5 per million tokens."
+          }
+        },
+        "openai_3q": {
+          "inputs": {
+            "prompt": {"type": "string", "required": true, "max_length": 32000},
+            "n": {"type": "integer", "min": 1, "max": 10, "default": 1},
+            "size": {"type": "string", "pattern": "^(auto|[0-9]+x[0-9]+)$", "default": "1024x1024", "send_default": true},
+            "quality": {"type": "string", "enum": ["low", "medium", "high"], "default": "medium", "send_default": true},
+            "background": {"type": "string", "enum": ["transparent", "opaque", "auto"]},
+            "output_format": {"type": "string", "enum": ["png", "jpeg", "webp"]},
+            "output_compression": {"type": "integer", "min": 0, "max": 100},
+            "moderation": {"type": "string", "enum": ["low", "auto"]}
+          }
+        }
+      }
+    },
+    "runway": {
+      "kind": "video",
+      "source": "https://docs.dev.runwayml.com/guides/pricing/",
+      "checked": "2026-10-24",
+      "note": "Runway bills in credits at $0.01 per credit. Prices below are in dollars. The task reports its real cost in credits, and the ledger uses that when it is there.",
+      "models": {
+        "gen4_turbo": {
+          "label": "Gen-4 Turbo",
+          "endpoints": ["image_to_video"],
+          "summary": "$0.05 per second (5 credits); needs a start image",
+          "notes": "Image to video only. Cheapest Runway Gen-4 model.",
+          "docs": "https://docs.dev.runwayml.com/api/",
+          "inputs": {
+            "prompt": {"type": "string", "max_length": 1000},
+            "promptImage": {"type": "file", "required": true},
+            "ratio": {"type": "string", "required": true, "enum": ["1280:720", "720:1280", "1104:832", "832:1104", "960:960", "1584:672"]},
+            "duration": {"type": "integer", "required": true, "min": 2, "max": 10},
+            "seed": {"type": "integer", "min": 0, "max": 4294967295}
+          },
+          "price": {"method": "per_second", "seconds_key": "duration", "rate": 0.05,
+                    "why": "gen4_turbo: 5 credits per second, $0.01 per credit."}
+        },
+        "gen4.5": {
+          "label": "Gen-4.5",
+          "endpoints": ["text_to_video", "image_to_video"],
+          "summary": "$0.12 per second (12 credits)",
+          "notes": "Text or image to video. Text to video takes only 1280:720 or 720:1280.",
+          "docs": "https://docs.dev.runwayml.com/api/",
+          "inputs": {
+            "prompt": {"type": "string", "required": true, "max_length": 1000},
+            "promptImage": {"type": "file"},
+            "ratio": {"type": "string", "required": true, "enum": ["1280:720", "720:1280", "1104:832", "960:960", "832:1104", "1584:672"]},
+            "duration": {"type": "integer", "required": true, "min": 2, "max": 10},
+            "seed": {"type": "integer", "min": 0, "max": 4294967295}
+          },
+          "price": {"method": "per_second", "seconds_key": "duration", "rate": 0.12,
+                    "why": "gen4.5: 12 credits per second, $0.01 per credit. Pro output formats cost extra, so the tool sends plain mp4."}
+        },
+        "veo3.1_fast": {
+          "label": "Veo 3.1 Fast (through Runway)",
+          "endpoints": ["text_to_video", "image_to_video"],
+          "summary": "$0.15 per second with audio, $0.10 without",
+          "notes": "Google's Veo 3.1 Fast, billed by Runway. Audio is on unless you turn it off.",
+          "docs": "https://docs.dev.runwayml.com/api/",
+          "inputs": {
+            "prompt": {"type": "string", "required": true, "max_length": 1000},
+            "promptImage": {"type": "file"},
+            "ratio": {"type": "string", "required": true, "enum": ["1280:720", "720:1280", "1080:1920", "1920:1080"]},
+            "duration": {"type": "integer", "required": true, "enum": [4, 6, 8]},
+            "audio": {"type": "boolean", "default": true, "send_default": true},
+            "negativePrompt": {"type": "string", "max_length": 1000},
+            "seed": {"type": "integer", "min": 0, "max": 4294967295}
+          },
+          "price": {"method": "per_second", "seconds_key": "duration", "rate_key": "audio",
+                    "rates": {"true": 0.15, "false": 0.10},
+                    "why": "veo3.1_fast: 15 credits per second with audio, 10 without, $0.01 per credit."}
+        },
+        "veo3.1": {
+          "label": "Veo 3.1 (through Runway)",
+          "endpoints": ["text_to_video", "image_to_video"],
+          "summary": "$0.40 per second with audio, $0.20 without",
+          "notes": "Google's Veo 3.1, billed by Runway. Audio is on unless you turn it off.",
+          "docs": "https://docs.dev.runwayml.com/api/",
+          "inputs": {
+            "prompt": {"type": "string", "required": true, "max_length": 1000},
+            "promptImage": {"type": "file"},
+            "ratio": {"type": "string", "required": true, "enum": ["1280:720", "720:1280", "1080:1920", "1920:1080"]},
+            "duration": {"type": "integer", "required": true, "enum": [4, 6, 8]},
+            "audio": {"type": "boolean", "default": true, "send_default": true},
+            "negativePrompt": {"type": "string", "max_length": 1000},
+            "seed": {"type": "integer", "min": 0, "max": 4294967295}
+          },
+          "price": {"method": "per_second", "seconds_key": "duration", "rate_key": "audio",
+                    "rates": {"true": 0.40, "false": 0.20},
+                    "why": "veo3.1: 40 credits per second with audio, 20 without, $0.01 per credit."}
+        }
+      }
+    },
+    "google": {
+      "kind": "video",
+      "source": "https://ai.google.dev/gemini-api/docs/pricing",
+      "checked": "2026-10-24",
+      "note": "All Veo models in the Gemini API are shut down (Veo 3.1 Preview on 2026-10-22). Google's replacement in the Gemini API is Gemini Omni Flash. It needs a paid tier project.",
+      "models": {
+        "gemini-omni-1.1-flash": {
+          "label": "Gemini Omni Flash 1.1",
+          "released": "2026-08-27",
+          "summary": "about $0.10 per second at 720p; the clip length is 3 to 10 s and cannot be set, so the estimate is for 10 s: about $1.12",
+          "notes": "Text and image to video with audio, 16:9 or 9:16. Tends to cut between shots unless the prompt asks for one continuous shot.",
+          "docs": "https://ai.google.dev/gemini-api/docs/omni",
+          "inputs": {
+            "prompt": {"type": "string", "required": true},
+            "image": {"type": "file"},
+            "aspect_ratio": {"type": "string", "enum": ["16:9", "9:16"], "default": "16:9"},
+            "resolution": {"type": "string", "enum": ["360p", "720p", "1080p", "4k"], "default": "720p", "send_default": true}
+          },
+          "price": {"method": "per_second", "assume_seconds": 10, "rate_key": "resolution",
+                    "rates": {"360p": 0.10136, "720p": 0.10136}, "margin": 1.1,
+                    "why": "Google bills video output at $17.50 per million tokens, at 5,792 tokens per second of 720p ($0.10136 a second). Output is 3 to 10 s with no length setting, so the estimate assumes 10 s. 360p uses the 720p rate, the only one Google publishes. 1080p and 4K have no published rate, so they need --assume-cost. 10% is added for thinking and input tokens."}
+        }
+      }
+    }
+  }
+}
