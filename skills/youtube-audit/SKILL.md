@@ -1,7 +1,7 @@
 ---
 name: youtube-audit
 description: >-
-Diagnose why a founder's YouTube channel is stuck, from their own YouTube Studio export:
+  Diagnose why a founder's YouTube channel is stuck, from their own YouTube Studio export:
   finds where people drop off (not shown, not clicked, not watched, not subscribing or
   buying), compares each video with the channel's own median instead of made-up benchmarks,
   and ranks the top 3 fixes with the numbers behind each. Use it for ANY request about why a

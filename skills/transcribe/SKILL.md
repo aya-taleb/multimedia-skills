@@ -1,7 +1,7 @@
 ---
 name: transcribe
 description: >-
-Turn an audio or video file the user owns into a timestamped transcript, on their own
+  Turn an audio or video file the user owns into a timestamped transcript, on their own
   computer with faster-whisper (free, nothing uploaded). Writes a readable transcript with
   [mm:ss] stamps, plus SRT or VTT captions and a JSON file other skills can read, and walks
   the user through the install if faster-whisper is missing. Use it for ANY request to
@@ -9,7 +9,8 @@ Turn an audio or video file the user owns into a timestamped transcript, on thei
   YouTube, Instagram or TikTok link: this skill knows how to handle links safely (it never
   downloads from platforms and shows how to export your own file). Triggers: "transcribe
   this", "get the transcript of my podcast / webinar / interview / reel", "make subtitles",
-  "SRT file", "what did I say at minute 12", or before talking-head-cards, chapters or clips.
+  "SRT file", "what did I say at minute 12", or before talking-head-cards, chapters or
+  clips.
 ---
 
 # transcribe
